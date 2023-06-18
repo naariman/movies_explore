@@ -20,8 +20,6 @@ class SearchMoviesRepository {
 
 extension SearchMoviesRepository: SearchMoviesRepositryInterface {
     func getMovies(query: String, completion: @escaping (Result<[MoviePosterModel], Error>) -> Void) {
-        currentPage = 1
-        self.query = query
         
         remoteDataSource.getMovies(query: query, page: currentPage) { [weak self] result in
             guard let self = self else { return }
@@ -29,7 +27,7 @@ extension SearchMoviesRepository: SearchMoviesRepositryInterface {
             case .success(let paginationModel):
                 self.totalPages = paginationModel.totalPages
                 self.currentPage = paginationModel.page
-                
+                self.query = query
                 completion(.success(paginationModel.results))
             case .failure(let error):
                 completion(.failure(error))
@@ -38,24 +36,22 @@ extension SearchMoviesRepository: SearchMoviesRepositryInterface {
     }
     
     func getMoreMovies(completion: @escaping (Result<[MoviePosterModel], Error>) -> Void) {
-        if currentPage > totalPages {
+        guard let query = query, currentPage <= totalPages else {
             completion(.success([]))
             return
         }
         
-        
-        remoteDataSource.getMovies(query: query ?? "A", page: currentPage + 1) { [weak self] result in
+        remoteDataSource.getMovies(query: query, page: currentPage + 1) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let paginationModel):
                 self.totalPages = paginationModel.totalPages
                 self.currentPage = paginationModel.page
-                
+                self.query = query
                 completion(.success(paginationModel.results))
             case .failure(let error):
                 completion(.failure(error))
             }
-            
         }
     }
     

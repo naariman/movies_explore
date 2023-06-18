@@ -15,7 +15,7 @@ struct MoviePosterModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case posterPath = "poster_path"
-        case title
+        case title = "original_title"
     }
     
     init(from decoder: Decoder) throws {
