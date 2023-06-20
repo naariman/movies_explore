@@ -12,6 +12,9 @@ enum SearchMoviesEndpoint {
 }
 
 extension SearchMoviesEndpoint: RequestProviding {
+    var shouldAddAuthorizationToken: Bool {
+          true
+    }
     
     var urlRequest: URLRequest {
         switch self {
@@ -22,7 +25,7 @@ extension SearchMoviesEndpoint: RequestProviding {
             queryItems.append(URLQueryItem(name: "query", value: query))
             queryItems.append(URLQueryItem(name: "page", value: "\(page)"))
             queryItems.append(URLQueryItem(name: "language", value: "en-US"))
-            queryItems.append(.init(name: "include_adult", value: "true"))
+            queryItems.append(URLQueryItem(name: "include_adult", value: "false"))
             components?.queryItems = queryItems
             guard let componentsURL = components?.url else { fatalError() }
 
@@ -31,12 +34,7 @@ extension SearchMoviesEndpoint: RequestProviding {
         }
     }
     
-    var shouldAddAuthorizationToken: Bool {
-        switch self {
-        case .getMovies:
-            return true
-        }
-    }
+  
 }
 
 

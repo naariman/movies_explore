@@ -46,7 +46,7 @@ class MainPageViewController: UIViewController {
         let network = Network()
         let dataSource = SearchMoviesDataRemoteSource(network: network)
         let repository = SearchMoviesRepository(remoteDataSource: dataSource)
-        let viewModel = SearchMovieViewModel(query: "", repository: repository)
+        let viewModel = SearchMovieViewModel(repository: repository)
         let viewController = SearchMovieViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
         

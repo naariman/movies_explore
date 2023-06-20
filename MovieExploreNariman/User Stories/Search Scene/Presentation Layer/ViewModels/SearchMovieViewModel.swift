@@ -10,8 +10,6 @@ import Foundation
 class SearchMovieViewModel {
     private let repository: SearchMoviesRepositryInterface
     private(set) var movies: [MoviePosterModel] = []
-    var filteredMovies: [MoviePosterModel] = []
-    var query: String
     
     private(set) var state: State = .loading {
         didSet {
@@ -30,20 +28,18 @@ class SearchMovieViewModel {
     }
     
     
-    init(query: String, repository: SearchMoviesRepositryInterface) {
-        self.query = query
+    init(repository: SearchMoviesRepositryInterface) {
         self.repository = repository
     }
     
     func getMovies(query: String) {
-//        state = .loading
+        state = .loading
+        movies = []
 
         repository.getMovies(query: query) { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let movies):
-                print(movies)
                 self.movies = movies
                 self.state = .content
             case .failure(let error):
@@ -54,16 +50,7 @@ class SearchMovieViewModel {
             
         }
     }
-    
-    func getNumberOfItems() -> Int {
-        switch state {
-        case .content:
-            return filteredMovies.count
-        case .loading:
-            return 0
-        }
-    }
-    
+        
     func getMoreMovies() {
         repository.getMoreMovies { [weak self] result in
             guard let self = self else { return }
@@ -79,4 +66,14 @@ class SearchMovieViewModel {
         
         }
     }
+    
+    var getNumberOfItems: Int {
+        switch state {
+        case .content:
+            return movies.count
+        case .loading:
+            return 0
+        }
+    }
+
 }

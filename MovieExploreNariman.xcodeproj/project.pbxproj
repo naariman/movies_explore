@@ -11,6 +11,8 @@
 		9E12BB172A34989700C19D29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E12BB162A34989700C19D29 /* SceneDelegate.swift */; };
 		9E12BB1E2A34989800C19D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E12BB1D2A34989800C19D29 /* Assets.xcassets */; };
 		9E12BB212A34989800C19D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E12BB1F2A34989800C19D29 /* LaunchScreen.storyboard */; };
+		9E4BF7AC2A3F8E7E00CB4A50 /* SeacrhMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4BF7AB2A3F8E7E00CB4A50 /* SeacrhMovieCollectionViewCell.swift */; };
+		9E4BF7AE2A402C4300CB4A50 /* Data + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4BF7AD2A402C4300CB4A50 /* Data + ext.swift */; };
 		9E8252262A34EEC30051BA95 /* MoviesByCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8252252A34EEC30051BA95 /* MoviesByCategoryRepository.swift */; };
 		9E8252282A34EF130051BA95 /* MoviesByCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8252272A34EF130051BA95 /* MoviesByCategoryDataSource.swift */; };
 		9E82522A2A34EF5C0051BA95 /* MovieCategoriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8252292A34EF5C0051BA95 /* MovieCategoriesEndpoint.swift */; };
@@ -62,6 +64,8 @@
 		9E12BB1D2A34989800C19D29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E12BB202A34989800C19D29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E12BB222A34989800C19D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E4BF7AB2A3F8E7E00CB4A50 /* SeacrhMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeacrhMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E4BF7AD2A402C4300CB4A50 /* Data + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data + ext.swift"; sourceTree = "<group>"; };
 		9E8252252A34EEC30051BA95 /* MoviesByCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesByCategoryRepository.swift; sourceTree = "<group>"; };
 		9E8252272A34EF130051BA95 /* MoviesByCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesByCategoryDataSource.swift; sourceTree = "<group>"; };
 		9E8252292A34EF5C0051BA95 /* MovieCategoriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategoriesEndpoint.swift; sourceTree = "<group>"; };
@@ -158,6 +162,14 @@
 				9E82521F2A34EDCF0051BA95 /* Support */,
 			);
 			path = MovieExploreNariman;
+			sourceTree = "<group>";
+		};
+		9E4BF7AA2A3F8E5400CB4A50 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E4BF7AB2A3F8E7E00CB4A50 /* SeacrhMovieCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9E8252172A34ECB70051BA95 /* Application */ = {
@@ -345,6 +357,7 @@
 			children = (
 				9E8252442A34F2750051BA95 /* URL + ext.swift */,
 				9EBB9B2C2A3C41AA00E84F99 /* NSObject + ext.swift */,
+				9E4BF7AD2A402C4300CB4A50 /* Data + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +555,7 @@
 		9EBB9B142A3B949C00E84F99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E4BF7AA2A3F8E5400CB4A50 /* Cells */,
 				9EBB9B162A3B94BE00E84F99 /* SearchMovieViewController.swift */,
 			);
 			path = Views;
@@ -728,6 +742,7 @@
 				9E847BA52A39E0AA006AB3E5 /* MovieSkeletonCollectionViewCell.swift in Sources */,
 				9EBB9B2D2A3C41AA00E84F99 /* NSObject + ext.swift in Sources */,
 				9EBB9B012A3B5C1600E84F99 /* DetailsDataSource.swift in Sources */,
+				9E4BF7AE2A402C4300CB4A50 /* Data + ext.swift in Sources */,
 				9E82522A2A34EF5C0051BA95 /* MovieCategoriesEndpoint.swift in Sources */,
 				9EBB9B092A3B637A00E84F99 /* DetailRepository.swift in Sources */,
 				9E8252262A34EEC30051BA95 /* MoviesByCategoryRepository.swift in Sources */,
@@ -747,6 +762,7 @@
 				9E847BA72A39E230006AB3E5 /* SectionSkeletonCollectionReusableView.swift in Sources */,
 				9E12BB152A34989700C19D29 /* AppDelegate.swift in Sources */,
 				9E8252332A34F0080051BA95 /* MoviesByCatogoryRepositoriesInterface.swift in Sources */,
+				9E4BF7AC2A3F8E7E00CB4A50 /* SeacrhMovieCollectionViewCell.swift in Sources */,
 				9EBB9AF32A3A3C8100E84F99 /* CategoryMoviesViewModel.swift in Sources */,
 				9E82522E2A34EFA30051BA95 /* PaginationModel.swift in Sources */,
 				9EBB9AFF2A3B5A6C00E84F99 /* DetailsEndpoint.swift in Sources */,

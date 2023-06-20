@@ -8,6 +8,7 @@
 import Foundation
 
 protocol RequestProviding {
-    var urlRequest: URLRequest { get }
     var shouldAddAuthorizationToken: Bool { get }
+    var urlRequest: URLRequest { get }
+    
 }

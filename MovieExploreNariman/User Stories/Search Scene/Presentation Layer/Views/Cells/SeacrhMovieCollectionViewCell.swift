@@ -1,18 +1,17 @@
 //
-//  MoviePosterCell.swift
+//  SeacrhMovieCollectionViewCell.swift
 //  MovieExploreNariman
 //
-//  Created by Nariman on 10.06.2023.
+//  Created by Nariman on 19.06.2023.
 //
 
 import UIKit
-import Kingfisher
 
-class MoviePosterCollectionViewCell: UICollectionViewCell {
+class SeacrhMovieCollectionViewCell: UICollectionViewCell {
     private let posterImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         return imageView
