@@ -9,6 +9,6 @@ import Foundation
 
 extension URLRequest {
     mutating func addAuthorizationToken() {
-        allHTTPHeaderFields?["Authorization"] = "Bearer \(Constants.apiToken)"
+        allHTTPHeaderFields = ["Authorization": "Bearer \(Constants.apiToken)"]
     }
 }

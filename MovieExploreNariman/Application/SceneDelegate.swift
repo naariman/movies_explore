@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let network = Network()
-        let dataSource = MoviesByCatagoryRemoteDataSource(network: network)
+        let dataSource  = MoviesByCatagoryRemoteDataSource(network: network)
         let repository = MoviesByCategoryRepository(remoteDataSource: dataSource)
         let viewModel = MainPageViewModel(repository: repository)
         window.rootViewController = UINavigationController(rootViewController: MainPageViewController(viewModel: viewModel))

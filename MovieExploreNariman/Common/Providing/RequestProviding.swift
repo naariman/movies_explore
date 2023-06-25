@@ -10,5 +10,4 @@ import Foundation
 protocol RequestProviding {
     var shouldAddAuthorizationToken: Bool { get }
     var urlRequest: URLRequest { get }
-    
 }
