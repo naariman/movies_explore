@@ -1,4 +1,4 @@
-# MoviesExploreNariman
+# Movies Explore
 
 Movies list, MVVM implementation, CocoaPods and Kingfisher
 
